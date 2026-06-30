@@ -1,0 +1,24 @@
+# Secrets and local config
+.env
+*.env
+credentials.json
+token.json
+
+# User data (stored in ~/.sitetools at runtime)
+text_blast_prefill.json
+text_blast_state.json
+text_blast_errors.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# macOS
+.DS_Store
+*.icns
+icon.iconset/

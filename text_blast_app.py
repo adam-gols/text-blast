@@ -293,7 +293,7 @@ class TextBlastApp(tk.Tk):
         right = sf(top)
         right.pack(side="right", fill="both", expand=True, padx=(8, 0))
         lbl(right, "Message Template", font=FONT_BOLD).pack(anchor="w")
-        lbl(right, "Variables: {name} (first name)  {site}  {computer}  {channel}  {date}  {pod}  {region}",
+        lbl(right, "Variables: {name} or {first name}  {site}  {computer}  {channel}  {date}  {pod}  {region}",
             color=MUTED, font=FONT_SM).pack(anchor="w", pady=(2, 6))
 
         tmpl_outer = bordered_text(right, height=5)

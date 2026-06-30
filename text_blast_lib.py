@@ -409,7 +409,9 @@ def _first_name(name):
 
 def apply_template(template, enriched):
     msg = template
-    msg = msg.replace("{name}", _first_name(enriched.get("name")))
+    first = _first_name(enriched.get("name"))
+    msg = msg.replace("{first name}", first)
+    msg = msg.replace("{name}", first)
     msg = msg.replace("{site}", enriched.get("site") or "")
     msg = msg.replace("{computer}", enriched.get("computer") or "")
     msg = msg.replace("{channel}", enriched.get("channel") or "")

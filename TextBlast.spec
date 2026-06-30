@@ -2,14 +2,13 @@
 import os
 
 a = Analysis(
-    ['text_blast_app.py'],
+    ['launcher.py'],
     pathex=[],
     binaries=[],
-    datas=[
-        ('text_blast_lib.py', '.'),
-    ],
+    datas=[],
     hiddenimports=[
-        'dotenv', 'requests', 'tkinter', 'tkinter.ttk',
+        'text_blast_app', 'text_blast_lib',
+        'dotenv', 'requests', 'tkinter', 'tkinter.ttk', 'tkinter.scrolledtext',
         'keyring', 'keyring.backends', 'keyring.backends.macOS',
     ],
     hookspath=[],

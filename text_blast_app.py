@@ -4,9 +4,20 @@ import argparse
 import datetime as dt
 import os
 import sys
+
+try:
+    import tkinter as tk
+    from tkinter import messagebox, scrolledtext
+except ImportError:
+    print(
+        "\nText Blast requires Python with Tkinter (the UI).\n\n"
+        "On Mac, install Python from https://www.python.org/downloads/\n"
+        "Then run:  ./run.sh\n",
+        file=sys.stderr,
+    )
+    sys.exit(1)
+
 import threading
-import tkinter as tk
-from tkinter import messagebox, scrolledtext
 
 from text_blast_lib import (
     _kc_get,
@@ -771,6 +782,9 @@ class TextBlastApp(tk.Tk):
 
 
 def main():
+    if sys.platform == "darwin":
+        import multiprocessing
+        multiprocessing.freeze_support()
     parser = argparse.ArgumentParser(description="Text Blast — send personalized texts via iMessage")
     parser.add_argument("--event", help="Pre-select event and pull contacts on launch")
     parser.add_argument("--prefill", help="Path to prefill JSON (default: ~/.sitetools/text_blast_prefill.json)")

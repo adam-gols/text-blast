@@ -34,5 +34,6 @@ if [ -z "$PYTHON" ]; then
 fi
 
 echo "Using $PYTHON"
+export TK_SILENCE_DEPRECATION=1
 "$PYTHON" -m pip install -q -r requirements.txt
 exec "$PYTHON" text_blast_app.py "$@"

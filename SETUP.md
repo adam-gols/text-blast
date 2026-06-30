@@ -15,6 +15,18 @@ chmod +x run.sh
 
 ---
 
+## "Tk is deprecated" warning
+
+macOS may print:
+
+> DEPRECATION WARNING: The system version of Tk is deprecated...
+
+**This is not an error** — it means that Python is using Apple's old built-in Tk. The app should still work. `run.sh` silences this warning automatically.
+
+For best results (modern UI, no warning), install **Python from python.org** (includes Tcl/Tk 8.6), not the system `/usr/bin/python3`.
+
+---
+
 ## Why the UI doesn't show on a new Mac
 
 Text Blast needs **Tkinter** for its window. Many Macs only have Homebrew `python3`, which **does not include Tkinter** — the app exits silently or with an error and no window appears.

@@ -5,6 +5,9 @@ import datetime as dt
 import os
 import sys
 
+# macOS prints a scary "Tk is deprecated" warning for older Tcl/Tk — harmless with python.org Python
+os.environ.setdefault("TK_SILENCE_DEPRECATION", "1")
+
 try:
     import tkinter as tk
     from tkinter import messagebox, scrolledtext
